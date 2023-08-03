@@ -1,0 +1,56 @@
+--DDL_EX_1_3
+CREATE DATABASE Exercicio_1_3;
+ 
+ USE Exercicio_1_3;
+
+ CREATE TABLE Clinica
+(
+	IdClinica INT PRIMARY KEY IDENTITY,
+	Endereco VARCHAR (30) NOT NULL,
+)
+
+
+CREATE TABLE Donos
+(
+	IdDonos INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR (25) NOT NULL,
+)
+
+CREATE TABLE TipoPet
+(
+	IdTipoPet INT PRIMARY KEY IDENTITY,
+	Nome char(10) NOT NULL
+)
+
+CREATE TABLE Raca
+(
+	Idraca INT PRIMARY KEY IDENTITY,
+	Nome char(10) NOT NULL
+)
+
+ CREATE TABLE Veterinario
+(
+	IdVeterinario INT PRIMARY KEY IDENTITY,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica) NOT NULL,
+	Nome VARCHAR (25) NOT NULL,
+)
+
+CREATE TABLE Atendimento
+(
+	IdAtendimento INT PRIMARY KEY IDENTITY,
+	IdVeterinario INT FOREIGN KEY REFERENCES Veterinario(IdVeterinario) NOT NULL,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica) NOT NULL,
+	Numero int NOT NULL
+)
+
+CREATE TABLE Pet
+(
+	IdPet INT PRIMARY KEY IDENTITY,
+	IdDonos INT FOREIGN KEY REFERENCES Donos(IdDonos) NOT NULL,
+	IdTipoPet INT FOREIGN KEY REFERENCES TipoPet(IdTipoPet) NOT NULL,
+	Idraca INT FOREIGN KEY REFERENCES Raca(Idraca) NOT NULL,
+	Nome VARCHAR (25) NOT NULL,
+	DtNascimento DATE NOT NULL
+)
+
+drop table raca

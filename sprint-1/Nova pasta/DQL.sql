@@ -1,0 +1,3 @@
+-- DQL
+
+SELECT * FROM Empresas
