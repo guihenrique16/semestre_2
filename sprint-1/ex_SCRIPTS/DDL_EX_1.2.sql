@@ -42,5 +42,8 @@ CREATE TABLE Aluguel
 	Idveiculo INT FOREIGN KEY REFERENCES Veiculo(Idveiculo) NOT NULL,
 	IdCliente INT FOREIGN KEY REFERENCES Cliente(IdCliente) NOT NULL,
 	valor FLOAT NOT NULL,
-	[Data] DATE NOT NULL 
+	DataInicial DATE NOT NULL,
+	DataFinal DATE NOT NULL 
 )
+
+DROP TABLE Aluguel

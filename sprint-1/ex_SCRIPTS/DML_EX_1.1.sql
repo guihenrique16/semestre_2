@@ -9,7 +9,9 @@ INSERT INTO Email(IdPessoa,endereco)
 VALUES(1,'gui@gmail.com'),(2,'Mumu@gmail.com'),(1,'gui2@gmail.com');
 
 INSERT INTO Telefone(IdPessoa,Numero)
-VALUES(1,'11 93543-8756'),(2,'11 93654-1875'),(1,'11 92463-1951');
+VALUES(1,'11 93543-8756'),(2,'11 93654-1875');
+
+delete from Telefone where IdTelefone = 3
 
 
 SELECT * FROM Pessoa
