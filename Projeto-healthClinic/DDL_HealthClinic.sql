@@ -27,12 +27,12 @@
 --CREATE TABLE Usuario
 --(
 --	IdUsuario INT PRIMARY KEY IDENTITY,
---	IdTipoDeUsuario INT FOREIGN KEY REFERENCES TiposDeUsuarios(IdTiposDeUsuarios),
+--	IdTiposDeUsuarios INT FOREIGN KEY REFERENCES TiposDeUsuarios(IdTiposDeUsuarios),
+--	Nome VARCHAR (50) NOT NULL,
+--	DataNascimento DATE NOT NULL,
+--	Telefone VARCHAR (20) NOT NULL,
 --	Email VARCHAR (50) NOT NULL UNIQUE,
 --	Senha VARCHAR (50) NOT NULL,
---	Nome VARCHAR (50) NOT NULL,
---	Telefone VARCHAR (20) NOT NULL,
---	DataNascimento DATE NOT NULL,
 --);
 
 --CREATE TABLE Paciente
