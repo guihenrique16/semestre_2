@@ -21,35 +21,40 @@ SELECT
  Consulta.Prontuário,
  comentarios.feedbacks
 
-FROM 
-Clinica
-
-INNER JOIN 
+FROM
 Consulta
-ON 
-Clinica.IdClinica = Consulta.IdClinica
+
+INNER JOIN
+Clinica
+ON
+Consulta.IdClinica = Clinica.IdClinica
 
 INNER JOIN 
 Medico
-ON
-medico.IdConsulta = Consulta.IdConsulta
-
-INNER JOIN
-Usuario M
 ON 
-M.IdUsuario = Medico.IdUsuario
-
-INNER JOIN
-Usuario P
-ON 
-P.IdUsuario = Paciente.IdUsuario
+Consulta.IdMedico = Medico.IdMedico
 
 INNER JOIN
 Especialidades
 ON 
 Medico.IdEspecialidades = Especialidades.IdEspecialidades
 
-LEFT JOIN
-Comentarios
+LEFT JOIN 
+comentarios
+ON
+Consulta.IdConsulta = comentarios.IdConsulta
+
+INNER JOIN 
+Paciente
+ON
+Paciente.IdPaciente = Consulta.IdPaciente
+
+INNER JOIN 
+Usuario P
+ON
+P.IdUsuario = Paciente.IdUsuario
+
+INNER JOIN 
+Usuario M 
 ON 
-Consulta.IdConsulta = Comentarios.IdConsulta;
+M.IdUsuario = Medico.IdUsuario
