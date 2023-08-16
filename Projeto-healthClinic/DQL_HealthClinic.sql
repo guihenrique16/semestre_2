@@ -14,9 +14,9 @@ USE HealthClinic_Tarde;
 SELECT 
  Consulta.IdConsulta,
  Clinica.NomeFantasia,
- P.Nome,
- M.Nome,
- Especialidades.TituloEspecialidades AS Especialidades,
+ P.Nome as Paciente,
+ M.Nome AS Medico,
+ Especialidades.TituloEspecialidades AS [Especialidades Do Medico],
  Medico.CRM,
  Consulta.Prontuário,
  comentarios.feedbacks
