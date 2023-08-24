@@ -1,7 +1,6 @@
+*
 ---- DESAFIO1
 ---- Criar função para retornar os médicos de uma determinada especialidade
-
----- Criar uma função para retornar médicos por especialidade
 
 --CREATE FUNCTION MedicosPorEspecialidade
 --(
@@ -21,3 +20,4 @@
 --);
 
 --SELECT * FROM MedicosPorEspecialidade('Neurologista');
+
