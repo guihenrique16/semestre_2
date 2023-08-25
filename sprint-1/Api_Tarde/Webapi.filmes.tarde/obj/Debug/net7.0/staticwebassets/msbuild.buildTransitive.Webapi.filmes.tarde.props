@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Webapi.filmes.tarde.props" />
+</Project>
