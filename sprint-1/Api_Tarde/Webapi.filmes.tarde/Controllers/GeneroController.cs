@@ -84,5 +84,22 @@ namespace Webapi.filmes.tarde.Controllers
             }
         }
 
+        [HttpDelete("{Id}")]
+        public IActionResult delete(int Id) 
+        {
+            try
+            {
+                _generoRepository.Deletar(Id);
+
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+
+                throw;
+            }
+        }
+
     }
 }

@@ -18,7 +18,25 @@ namespace Webapi.filmes.tarde.Repositories
 
         public void AtualizarIdCorpo(GeneroDomain genero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                //DECLARA A QUERY QUE SERA EXECUTADA
+                string queryPut = "INSERT INTO Genero(Nome) VALUES (@Nome)";
+
+
+                // DECLARA O SQLCOMMAND PASSANDO A QUERY QUE SERA EXECUTADA E A CONEXAO COM O BD 
+                using (SqlCommand cmd = new SqlCommand(queryPut, con))
+                {
+                    cmd.Parameters.AddWithValue("@Nome", );
+
+                    // ABRE A CONEXAO COM O BD
+                    con.Open();
+
+                    //EXECUTA A QUERY
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
         }
 
         public void AtualizarIdUrl(int Id, GeneroDomain genero)
@@ -41,12 +59,14 @@ namespace Webapi.filmes.tarde.Repositories
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
                 //DECLARA A QUERY QUE SERA EXECUTADA
-                string queryInsert = "INSERT INTO Genero(Nome) VALUES (' " + NovoGenero.Nome + " ')";
+                string queryInsert = "INSERT INTO Genero(Nome) VALUES (@Nome)";
 
                 
                 // DECLARA O SQLCOMMAND PASSANDO A QUERY QUE SERA EXECUTADA E A CONEXAO COM O BD 
                 using (SqlCommand cmd = new SqlCommand(queryInsert,con))
                 {
+                    cmd.Parameters.AddWithValue("@Nome", NovoGenero.Nome);
+
                     // ABRE A CONEXAO COM O BD
                     con.Open();
 
@@ -57,9 +77,20 @@ namespace Webapi.filmes.tarde.Repositories
             }
         }
 
-        public void Deletar(int id)
+        public void Deletar(int Id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string queryDelete = $"DELETE FROM Genero WHERE {Id} = Genero.IdGenero";
+
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
         }
 
 
