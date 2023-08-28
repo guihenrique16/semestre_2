@@ -67,7 +67,7 @@ namespace Webapi.filmes.tarde.Controllers
         /// <param name="NovoGenero">objeto recebido na aquisicao</param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult post(GeneroDomain NovoGenero) 
+        public IActionResult post(GeneroDomain NovoGenero)
         {
             try
             {
@@ -84,6 +84,11 @@ namespace Webapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que acessa o metodo de Excluir generos
+        /// </summary>
+        /// <param name="Id"> objeto que sera excluido </param>
+        /// <returns></returns>
         [HttpDelete("{Id}")]
         public IActionResult delete(int Id) 
         {
@@ -101,5 +106,33 @@ namespace Webapi.filmes.tarde.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que acessa o metodo de buscar generos por Id
+        /// </summary>
+        /// <param name="Id"> objeto que sera buscado </param>
+        /// <returns></returns>
+        [HttpGet("{Id}")]
+        public IActionResult BuscarPorId(int Id) 
+        {
+            try
+            {
+                GeneroDomain BuscarGenero = _generoRepository.BuscarPorId(Id);
+
+                if (BuscarGenero.IdGenero == 0)
+                {
+                    return NotFound("Genero nao encontrado");  
+                }
+
+                return StatusCode(200,BuscarGenero);
+
+            
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+
+                throw;
+            }
+        }
     }
 }

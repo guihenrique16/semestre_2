@@ -33,6 +33,20 @@
             <param name="NovoGenero">objeto recebido na aquisicao</param>
             <returns></returns>
         </member>
+        <member name="M:Webapi.filmes.tarde.Controllers.GeneroController.delete(System.Int32)">
+            <summary>
+            Endpoint que acessa o metodo de Excluir generos
+            </summary>
+            <param name="Id"> objeto que sera excluido </param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Controllers.GeneroController.BuscarPorId(System.Int32)">
+            <summary>
+            Endpoint que acessa o metodo de buscar generos por Id
+            </summary>
+            <param name="Id"> objeto que sera buscado </param>
+            <returns></returns>
+        </member>
         <member name="T:Webapi.filmes.tarde.Domains.FilmeDomain">
             <summary>
             Classe que representa a entidade ou tabela Filme
@@ -88,12 +102,25 @@
             <param name="id"> ID do objeto a ser deletado </param>
         </member>
         <!-- Badly formed XML comment ignored for member "F:Webapi.filmes.tarde.Repositories.GeneroRepository.StringConexao" -->
+        <member name="M:Webapi.filmes.tarde.Repositories.GeneroRepository.BuscarPorId(System.Int32)">
+            <summary>
+            buscar genero por Id
+            </summary>
+            <param name="Id"> objeto que sera buscado </param>
+            <returns></returns>
+        </member>
         <member name="M:Webapi.filmes.tarde.Repositories.GeneroRepository.Cadastrar(Webapi.filmes.tarde.Domains.GeneroDomain)">
             <summary>
             cadastrar um novo genero
             </summary>
             <param name="NovoGenero"> objeto com as informacoes que serao cadastradas </param>
             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Repositories.GeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar um genero
+            </summary>
+            <param name="Id"></param>
         </member>
         <member name="M:Webapi.filmes.tarde.Repositories.GeneroRepository.ListarTodos">
             <summary>
