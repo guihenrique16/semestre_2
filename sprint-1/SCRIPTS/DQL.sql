@@ -1,3 +1,4 @@
 -- DQL
+USE BancoTarde;
 
-SELECT * FROM Empresas
+SELECT * FROM Empresas Where IdEmpresa = 2

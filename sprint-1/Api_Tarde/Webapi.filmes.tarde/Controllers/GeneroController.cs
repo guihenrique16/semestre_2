@@ -134,5 +134,56 @@ namespace Webapi.filmes.tarde.Controllers
                 throw;
             }
         }
+
+        /// <summary>
+        /// Endpoint que acessa o método de atualizar gêneros pelo Id no corpo
+        /// </summary>
+        /// <param name="genero">Objeto com as novas informações do gênero</param>
+        /// <returns>Status code e mensagen a ser exibida</returns>
+        [HttpPut]
+        public IActionResult Put(GeneroDomain genero)
+        {
+            try
+            {
+                _generoRepository.AtualizarIdCorpo(genero);
+
+                return StatusCode(200, "O gênero foi atualizado com sucesso");
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
+        /// Endpoint que acessa o método de atualizar gêneros pelo Id na Url
+        /// </summary>
+        /// <param name="Id">Id do gênero a ser atualizado</param>
+        /// <param name="genero">Objeto com as novas informações do gênero a ser atualizado</param>
+        /// <returns></returns>
+        [HttpPut("{_id}")]
+        public IActionResult Put(int Id, GeneroDomain genero)
+        {
+            try
+            {
+                GeneroDomain _generoBuscado = _generoRepository.BuscarPorId(Id);
+
+                if (_generoBuscado == null)
+                {
+                    return StatusCode(404, "Não existe gênero cadastrado com o Id informado");
+
+                }
+                else
+                {
+                    _generoRepository.AtualizarIdUrl(Id, genero);
+
+                    return StatusCode(200, "O gênero foi atualizado com sucesso");
+                }
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
     }
 }

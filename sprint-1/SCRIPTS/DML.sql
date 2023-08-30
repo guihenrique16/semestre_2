@@ -1,4 +1,6 @@
 -- DML
+USE BancoTarde;
+
 INSERT INTO Funcionarios(Nome)
 VALUES ('GOIS')
 

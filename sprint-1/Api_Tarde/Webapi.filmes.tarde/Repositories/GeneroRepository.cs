@@ -16,14 +16,49 @@ namespace Webapi.filmes.tarde.Repositories
         /// </summary>
         private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = Filmes_Tarde; User Id = sa; Pwd = Senai@134";
 
+        /// <summary>
+        /// Método para atualizar um gênero existente pelo id no corpo
+        /// </summary>
+        /// <param name="genero">O objeto contendo as informações do gênero que serão atualizadas</param>
         public void AtualizarIdCorpo(GeneroDomain genero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string QueryUpdate = "UPDATE Genero SET Genero.Nome = @Nome WHERE Genero.IdGenero = @Id";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(QueryUpdate, con))
+                {
+                    cmd.Parameters.AddWithValue("@Nome", genero.Nome);
+                    cmd.Parameters.AddWithValue("@Id", genero.IdGenero);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
+        /// <summary>
+        /// Método para atualizar as informações de um gênero passando o id pela Url
+        /// </summary>
+        /// <param name="Id">O id do gênero a ser atualizado</param>
+        /// <param name="genero">O objeto com as novas informações do gênero</param>
         public void AtualizarIdUrl(int Id, GeneroDomain genero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string QueryUpdateByUrl = "UPDATE Genero SET Genero.Nome = @Nome WHERE Genero.IdGenero = @Id";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(QueryUpdateByUrl, con))
+                {
+                    cmd.Parameters.AddWithValue("@Id", Id);
+                    cmd.Parameters.AddWithValue("@Nome", genero.Nome);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         /// <summary>
