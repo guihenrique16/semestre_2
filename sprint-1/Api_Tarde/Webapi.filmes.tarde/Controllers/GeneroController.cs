@@ -161,7 +161,7 @@ namespace Webapi.filmes.tarde.Controllers
         /// <param name="Id">Id do gênero a ser atualizado</param>
         /// <param name="genero">Objeto com as novas informações do gênero a ser atualizado</param>
         /// <returns></returns>
-        [HttpPut("{_id}")]
+        [HttpPut("{id}")]
         public IActionResult Put(int Id, GeneroDomain genero)
         {
             try

@@ -77,7 +77,62 @@ namespace Webapi.filmes.tarde.Controllers
             }
 
         }
-     }
+
+        /// <summary>
+        /// Endpoint que acessa o metodo de buscar Filmes por id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [HttpGet("{Id}")]
+        public IActionResult Get(int Id) 
+        {
+            try
+            {
+                FilmeDomain Filmebuscado = _filmeRepository.BuscarPorId(Id);
+                if (Filmebuscado != null)
+                {
+                       return StatusCode(200, Filmebuscado);
+                }
+                return StatusCode(404);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
+        /// Endpoint que acessa o metodo de excluir Filmes
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        public IActionResult Delete(int Id)
+        {
+            try
+            {
+                FilmeDomain FilmeBuscado = _filmeRepository.BuscarPorId(Id);
+                if (FilmeBuscado == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    _filmeRepository.ExcuirPorId(Id);
+
+                    return StatusCode(204, Id);
+
+                }
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+
+                throw;
+            }
+        }
+
+    }
 }
 
 

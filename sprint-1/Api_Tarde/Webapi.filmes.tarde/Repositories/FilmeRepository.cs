@@ -18,11 +18,56 @@ namespace Webapi.filmes.tarde.Repositories
             throw new NotImplementedException();
         }
 
-        public void BuscarPorId(int id)
+        /// <summary>
+        /// buscar um filme pelo id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public FilmeDomain BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            FilmeDomain BuscarFilme;
+
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                String QueryBuscar = "SELECT Filme.IdFilme,Filme.IdGenero,Filme.Titulo,Genero.IdGenero, Genero.Nome FROM Filme INNER JOIN Genero ON Filme.IdGenero = Genero.IdGenero WHERE Filme.IdFilme = @IdFilme";
+                con.Open();
+
+                SqlDataReader rdr;
+
+                using (SqlCommand cmd = new SqlCommand(QueryBuscar,con))
+                {
+                    cmd.Parameters.AddWithValue("Idfilme", id);
+
+                    rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read())
+                    {
+                        BuscarFilme = new FilmeDomain()
+                        {
+                             IdFilme = Convert.ToInt32(rdr["IdFilme"]),
+                             IdGenero= Convert.ToInt32(rdr["IdGenero"]), 
+                             Titulo = rdr["Titulo"].ToString(), 
+                             
+                             Genero = new GeneroDomain() 
+                             {
+                                 IdGenero= Convert.ToInt32(rdr["IdGenero"]),
+                                 Nome = rdr["Nome"].ToString(),
+                             }
+                        }; 
+
+                        return BuscarFilme;
+                    }
+
+                   
+                }
+            }
+            return null;
         }
 
+        /// <summary>
+        /// cadastrar um novo Filme
+        /// </summary>
+        /// <param name="NovoFilme"></param>
         public void Cadastrar(FilmeDomain NovoFilme)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
@@ -41,11 +86,30 @@ namespace Webapi.filmes.tarde.Repositories
             }
         }
 
+        /// <summary>
+        /// excluir um filme 
+        /// </summary>
+        /// <param name="id"></param>
         public void ExcuirPorId(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                String QueryExluir = "DELETE FROM Filme WHERE Filme.IdFilme = @IdFilme";
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(QueryExluir,con) )
+                {
+                    cmd.Parameters.AddWithValue("@IdFilme",id);
+
+                    cmd.ExecuteNonQuery() ; 
+                }
+            }
         }
 
+        /// <summary>
+        /// listar todos os filmes
+        /// </summary>
+        /// <returns></returns>
         public List<FilmeDomain> ListarTodos()
         {
             List<FilmeDomain> ListaFilmes = new List<FilmeDomain>();

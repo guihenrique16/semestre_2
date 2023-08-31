@@ -33,6 +33,20 @@
             </summary>
             <returns> lista de filmes e um status code </returns>
         </member>
+        <member name="M:Webapi.filmes.tarde.Controllers.FilmeController.Get(System.Int32)">
+            <summary>
+            Endpoint que acessa o metodo de buscar Filmes por id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Controllers.FilmeController.Delete(System.Int32)">
+            <summary>
+            Endpoint que acessa o metodo de excluir Filmes
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
         <member name="T:Webapi.filmes.tarde.Controllers.GeneroController">
             <summary>
             Route: define que a rota de uma requisição será no seguinte formato: dominio/api/nomeController
@@ -99,6 +113,11 @@
         <member name="T:Webapi.filmes.tarde.Domains.GeneroDomain">
             <summary>
             Classe que representa a entidade ou a tabela Genero
+            </summary>
+        </member>
+        <member name="T:Webapi.filmes.tarde.Domains.UsuarioDomain">
+            <summary>
+            classe que representa a entidade usuario
             </summary>
         </member>
         <member name="M:Webapi.filmes.tarde.Interfaces.IFilmeRepository.Cadastrar(Webapi.filmes.tarde.Domains.FilmeDomain)">
@@ -182,6 +201,39 @@
             Deletar um gênero existente
             </summary>
             <param name="id"> ID do objeto a ser deletado </param>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            metodo que busca um usario por email e senha 
+            </summary>
+            <param name="Email"></param>
+            <param name="Senha"></param>
+            <returns> objeto que sera buscado </returns>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Repositories.FilmeRepository.BuscarPorId(System.Int32)">
+            <summary>
+            buscar um filme pelo id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Repositories.FilmeRepository.Cadastrar(Webapi.filmes.tarde.Domains.FilmeDomain)">
+            <summary>
+            cadastrar um novo Filme
+            </summary>
+            <param name="NovoFilme"></param>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Repositories.FilmeRepository.ExcuirPorId(System.Int32)">
+            <summary>
+            excluir um filme 
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Webapi.filmes.tarde.Repositories.FilmeRepository.ListarTodos">
+            <summary>
+            listar todos os filmes
+            </summary>
+            <returns></returns>
         </member>
         <!-- Badly formed XML comment ignored for member "F:Webapi.filmes.tarde.Repositories.GeneroRepository.StringConexao" -->
         <member name="M:Webapi.filmes.tarde.Repositories.GeneroRepository.AtualizarIdCorpo(Webapi.filmes.tarde.Domains.GeneroDomain)">

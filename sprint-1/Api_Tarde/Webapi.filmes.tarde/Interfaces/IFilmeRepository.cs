@@ -23,7 +23,7 @@ namespace Webapi.filmes.tarde.Interfaces
         /// </summary>
         /// <param name="Id">Id do filme a ser buscado</param>
         /// <returns>Os dados do filme com o id especificado</returns>
-        void BuscarPorId(int Id);
+        FilmeDomain BuscarPorId(int Id);
 
         /// <summary>
         /// Método para alterar um filme pelo corpo da requisição
