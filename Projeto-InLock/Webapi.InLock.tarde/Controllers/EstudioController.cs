@@ -15,7 +15,7 @@ namespace Webapi.InLock.tarde.Controllers
 
         public EstudioController()
         {
-            _estudiorepository= new EstudioRepository();
+            _estudiorepository = new EstudioRepository();
         }
 
         /// <summary>

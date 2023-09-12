@@ -9,7 +9,7 @@ namespace Webapi.InLock.tarde.Repositories
     {
         private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_Tarde; User Id = sa; Pwd = Senai@134";
 
-        public void cadastrar(JogoDomain NovoJogo)
+        public void Cadastrar(JogoDomain NovoJogo)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
             {

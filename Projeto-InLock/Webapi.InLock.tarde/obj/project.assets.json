@@ -1202,11 +1202,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\46561309820\\Desktop\\semestre_2\\InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
+      "projectUniqueName": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
       "projectName": "Webapi.InLock.tarde",
-      "projectPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
+      "projectPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
       "packagesPath": "C:\\Users\\46561309820\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\InLock\\Webapi.InLock.tarde\\obj\\",
+      "outputPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\46561309820\\AppData\\Roaming\\NuGet\\NuGet.Config",
