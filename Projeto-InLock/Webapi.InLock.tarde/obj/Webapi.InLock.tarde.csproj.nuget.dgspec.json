@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj": {}
+    "C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj": {}
   },
   "projects": {
-    "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj": {
+    "C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
+        "projectUniqueName": "C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
         "projectName": "Webapi.InLock.tarde",
-        "projectPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
-        "packagesPath": "C:\\Users\\46561309820\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\obj\\",
+        "projectPath": "C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\Webapi.InLock.tarde.csproj",
+        "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\guilh\\OneDrive\\Área de Trabalho\\semestre_2\\Projeto-InLock\\Webapi.InLock.tarde\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\46561309820\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

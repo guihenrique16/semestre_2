@@ -6,7 +6,8 @@ namespace Webapi.InLock.tarde.Repositories
 {
     public class EstudioRepository : IEstudioRepository
     {
-        private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_Tarde; User Id = sa; Pwd = Senai@134";
+        //private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_Tarde; User Id = sa; Pwd = Senai@134";
+        private string StringConexao = "Data Source = DESKTOP-91GF6I9\\SQLEXPRESS; Initial Catalog = inlock_games_Tarde; Integrated Security=True; TrustServerCertificate=true";
         public void Cadastrar(EstudioDomain NovoEstudio)
         {
             using (SqlConnection con = new SqlConnection(StringConexao))
