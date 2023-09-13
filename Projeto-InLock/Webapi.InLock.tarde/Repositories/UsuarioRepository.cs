@@ -9,8 +9,8 @@ namespace Webapi.InLock.tarde.Repositories
     {
         //String de conexão
         //Senai
-        //private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_Tarde; User Id = sa; Pwd = Senai@134";
-        private string StringConexao = "Data Source = DESKTOP-91GF6I9\\SQLEXPRESS; Initial Catalog = inlock_games_Tarde; Integrated Security=True; TrustServerCertificate=true";
+        private string StringConexao = "Data Source = NOTE08-S14; Initial Catalog = inlock_games_Tarde; User Id = sa; Pwd = Senai@134";
+        //private string StringConexao = "Data Source = DESKTOP-91GF6I9\\SQLEXPRESS; Initial Catalog = inlock_games_Tarde; Integrated Security=True; TrustServerCertificate=true";
         //Casa
         //private string StringConexao = "Data Source = NOTEBOOKFAMILIA; Initial Catalog = InLock_Games; User Id = sa; Pwd = Murilo12$";
 
