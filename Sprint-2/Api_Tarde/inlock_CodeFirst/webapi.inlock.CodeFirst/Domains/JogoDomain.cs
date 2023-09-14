@@ -22,7 +22,7 @@ namespace webapi.inlock.CodeFirst.Domains
         [Required(ErrorMessage ="Data de lancamento obrigatoria")]
         public DateTime Datalancamento { get; set; }
 
-        [Column(TypeName ="DECIMAL(4,2")]
+        [Column(TypeName ="DECIMAL(4,2)")]
         [Required(ErrorMessage ="Preco do jogo obrigatorio")]
         public decimal preco { get; set; }
 
