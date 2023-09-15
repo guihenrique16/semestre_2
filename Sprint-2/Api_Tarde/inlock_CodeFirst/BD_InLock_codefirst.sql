@@ -19,6 +19,7 @@ INSERT INTO Usuario
 VALUES (NEWID(),'adm@adm.com','SenhaADM','DAA161CE-7AC1-4309-ABCA-C5874FFA6A7D'),
 	   (NEWID(),'comum@comum.com','SenhaCM','99E5077F-8FBA-41B1-A5E7-90196A88AD0D')
 select * from Usuario
+select * from TiposUsuario
 
 DELETE FROM Estudio WHERE IdEstudio = '94E4182F-6D54-4B4D-91E6-F328ABA5EC8B'
 select * from Estudio

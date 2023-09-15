@@ -22,7 +22,7 @@ namespace webapi.inlock.CodeFirst.Repositories
 
                 if (usuarioBuscado == null)
                 {
-                    bool confere = Criptografia.CampararHash(senha, usuarioBuscado.Senha!);
+                    bool confere = Criptografia.CampararHash(senha, usuarioBuscado!.Senha!);
 
                     if (confere)
                     {
@@ -30,7 +30,7 @@ namespace webapi.inlock.CodeFirst.Repositories
                     }
                 }
                 
-                return null;
+                return null!;
             }
             catch (Exception)
             {

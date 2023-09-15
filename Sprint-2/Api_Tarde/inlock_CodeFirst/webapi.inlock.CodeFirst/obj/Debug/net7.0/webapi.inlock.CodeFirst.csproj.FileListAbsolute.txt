@@ -79,3 +79,4 @@ C:\Users\46561309820\Desktop\semestre_2\Sprint-2\Api_Tarde\inlock_CodeFirst\weba
 C:\Users\46561309820\Desktop\semestre_2\Sprint-2\Api_Tarde\inlock_CodeFirst\webapi.inlock.CodeFirst\obj\Debug\net7.0\webapi.inlock.CodeFirst.genruntimeconfig.cache
 C:\Users\46561309820\Desktop\semestre_2\Sprint-2\Api_Tarde\inlock_CodeFirst\webapi.inlock.CodeFirst\obj\Debug\net7.0\ref\webapi.inlock.CodeFirst.dll
 C:\Users\46561309820\Desktop\semestre_2\Sprint-2\Api_Tarde\inlock_CodeFirst\webapi.inlock.CodeFirst\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\46561309820\Desktop\semestre_2\Sprint-2\Api_Tarde\inlock_CodeFirst\webapi.inlock.CodeFirst\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

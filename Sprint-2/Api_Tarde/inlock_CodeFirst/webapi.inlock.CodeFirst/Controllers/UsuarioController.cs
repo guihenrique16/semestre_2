@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi.inlock.CodeFirst.Domains;
 using webapi.inlock.CodeFirst.Interfaces;
@@ -24,6 +25,7 @@ namespace webapi.inlock.CodeFirst.Controllers
         /// <param name="usuario"></param>
         /// <returns></returns>
         [HttpPost("usuario")]
+        [Authorize("DAA161CE-7AC1-4309-ABCA-C5874FFA6A7D")]
         public IActionResult Cadastrar(UsuarioDomain usuario)
         {
             try
