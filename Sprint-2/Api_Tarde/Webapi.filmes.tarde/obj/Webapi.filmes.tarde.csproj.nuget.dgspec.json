@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\46561309820\\Desktop\\semestre_2\\sprint-1\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj": {}
+    "C:\\Users\\46561309820\\Desktop\\semestre_2\\Sprint-2\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj": {}
   },
   "projects": {
-    "C:\\Users\\46561309820\\Desktop\\semestre_2\\sprint-1\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj": {
+    "C:\\Users\\46561309820\\Desktop\\semestre_2\\Sprint-2\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\46561309820\\Desktop\\semestre_2\\sprint-1\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj",
+        "projectUniqueName": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Sprint-2\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj",
         "projectName": "Webapi.filmes.tarde",
-        "projectPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\sprint-1\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj",
+        "projectPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Sprint-2\\Api_Tarde\\Webapi.filmes.tarde\\Webapi.filmes.tarde.csproj",
         "packagesPath": "C:\\Users\\46561309820\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\sprint-1\\Api_Tarde\\Webapi.filmes.tarde\\obj\\",
+        "outputPath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Sprint-2\\Api_Tarde\\Webapi.filmes.tarde\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\46561309820\\AppData\\Roaming\\NuGet\\NuGet.Config",
