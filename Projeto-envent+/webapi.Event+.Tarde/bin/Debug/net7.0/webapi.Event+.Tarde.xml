@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi.Event+.Tarde</name>
+    </assembly>
+    <members>
+        <member name="T:webapi.Event_.Tarde.Migrations.BD">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.Event_.Tarde.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.Event_.Tarde.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.Event_.Tarde.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.Event_.Tarde.Utils.Criptografia.CompararHash(System.String,System.String)">
+            <summary>
+            Verifica se a hash da senha informada e igaual a do banco
+            </summary>
+            <param name="senhaForm"> senha informada</param>
+            <param name="senhaBanco"> senha do banco</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

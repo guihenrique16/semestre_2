@@ -10,29 +10,28 @@ namespace webapi.Event_.Tarde.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class TipoUsuarioController : ControllerBase
+    public class TipoEventoController : ControllerBase
     {
-        private ITipoUsuarioRepository _tipoUsuarioRepository { get; set; }
+        private ITipoEventoRepository _tipoEventoRepository { get; set; }
 
-        public TipoUsuarioController()
+        public TipoEventoController()
         {
-            _tipoUsuarioRepository = new TipoUsuarioRepository();
+            _tipoEventoRepository = new TipoEventoRepository();
         }
 
         [HttpPost]
-        //[Authorize(Roles = "ADM")]
-        public IActionResult Post(TipoUsuario tipoUsuario)
+        public IActionResult Post(TipoEvento tipoEvento)
         {
             try
             {
-                _tipoUsuarioRepository.Cadastrar(tipoUsuario);
+                _tipoEventoRepository.Cadastrar(tipoEvento);
 
                 return StatusCode(201);
             }
             catch (Exception e)
             {
 
-                return BadRequest(e.Message);    
+                return BadRequest(e.Message);
             }
         }
     }

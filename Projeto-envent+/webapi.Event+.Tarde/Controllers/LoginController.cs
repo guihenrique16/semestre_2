@@ -13,6 +13,7 @@ namespace webapi.Event_.Tarde.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    
     public class LoginController : ControllerBase
     {
         private IUsuarioRepository _usuarioRepository;
@@ -47,12 +48,12 @@ namespace webapi.Event_.Tarde.Controllers
                         new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
 
                         //instancia a claim de permissão para autorização posteriormente
-                        new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario.Titulo)
+                        new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario.Titulo.ToString())
                     };
 
                     //2 - Definir a chave de acesso ao token
                     //instancia a chave simétrica de decodificação
-                    var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Event+-Tarde-chave-autenticacao-webApi"));
+                    var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Projeto-Event+-Tarde-chave-autenticacao-autorizacao-webApi"));
 
                     //3 - Definir as credenciais do token (Header)
                     //instancia que será uma chave e qual o tipo de algorítimo da mesma

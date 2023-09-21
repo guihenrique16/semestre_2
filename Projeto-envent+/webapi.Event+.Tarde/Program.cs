@@ -1,74 +1,92 @@
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(options =>
+    {
+        // Ignora os loopings nas consultas
+        options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+        // Ignora valores nulos ao fazer junções nas consultas
+        options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+    }
+);
 
+//Adiciona serviço de Jwt Bearer (forma de autenticação)
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultChallengeScheme = "JwtBearer";
     options.DefaultAuthenticateScheme = "JwtBearer";
 })
-
-//Define os parâmetros de validaçào do token (continuação acima)
 .AddJwtBearer("JwtBearer", options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        //Valida quem está solicitando
+        //valida quem está solicitando
         ValidateIssuer = true,
 
-        //Valida quem está recebendo
+        //valida quem está recebendo
         ValidateAudience = true,
 
-        //Define se o tempo de expiração do token será validado
+        //define se o tempo de expiração será validado
         ValidateLifetime = true,
 
-        //Forma de criptografia e a validação da chave de autenticação
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Event+-Tarde-chave-autenticacao-webApi")),
+        //forma de criptografia e valida a chave de autenticação
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Projeto-Event+-Tarde-chave-autenticacao-autorizacao-webApi")),
 
-        //Valida o tempo de expiração do token
+        //valida o tempo de expiração do token
         ClockSkew = TimeSpan.FromMinutes(5),
 
-        //De onde está vindo (qual o issure)
+        //nome do issuer (de onde está vindo)
         ValidIssuer = "webapi.Event+.Tarde",
 
-        //Para onde está indo (qual o audiece)
+        //nome do audience (para onde está indo)
         ValidAudience = "webapi.Event+.Tarde"
     };
 });
 
-//Adicione o gerador do Swagger à coleção de serviços no
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(options =>
 {
+    //Adiciona informações sobre a API no Swagger
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "API Event+_Tarde",
-        Description = "Api para gerenciamento de eventos - Projeto Event+_Tarde(CodeFirst)- Backend API",
+        Title = "API Event+",
+        Description = "API para gereciamento de Eventos - Backend API",
         Contact = new OpenApiContact
         {
-            Name = "Guilherme Alberto",
+            Name = "Guilherme Henrique Garbelini Alberto",
             Url = new Uri("https://github.com/guihenrique16")
-        },
+        }
     });
 
-    //Configure o Swagger para usar o arquivo XML
-    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
 
+    //Configura o Swagger para usar o arquivo XML gerado
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+
+    //Usando a autenticaçao no Swagger
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Values: Bearer TokenJWT"
-    });
 
+        //Define como o valor do token será passado pelo swagger
+        Description = "Velue: Bearer TokenJWT"
+    });
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -80,9 +98,12 @@ builder.Services.AddSwaggerGen(options =>
                     Id = "Bearer"
                 }
             },
-            new string[]{}
-        }
 
+            new string[]
+            {
+
+            }
+        }
     });
 });
 
@@ -95,7 +116,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//Para atender à interface do usuário do Swagger na raiz do aplicativo 
+//Para atender à interface do usuário do Swagger na raiz do aplicativo
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
@@ -104,9 +125,8 @@ app.UseSwaggerUI(options =>
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
