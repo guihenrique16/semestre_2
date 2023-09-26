@@ -6,5 +6,7 @@ namespace webapi.Event_.Tarde.Interfaces
     {
         void cadastrarEvento(Evento evento);
 
+        List<Evento> ListarEvento();
+
     }
 }

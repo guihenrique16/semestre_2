@@ -7,6 +7,7 @@ using webapi.Event_.Tarde.Repositories;
 
 namespace webapi.Event_.Tarde.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -20,7 +21,7 @@ namespace webapi.Event_.Tarde.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "ADM")]
+        [Authorize(Roles = "ADM")]
         public IActionResult Post(TipoUsuario tipoUsuario)
         {
             try
