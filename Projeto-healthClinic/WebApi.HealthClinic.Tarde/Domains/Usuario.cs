@@ -16,7 +16,7 @@ namespace WebApi.HealthClinic.Tarde.Domains
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "Campo obrigatorio")]
         [NotMapped]
-        public DateOnly DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "Campo obrigatorio")]

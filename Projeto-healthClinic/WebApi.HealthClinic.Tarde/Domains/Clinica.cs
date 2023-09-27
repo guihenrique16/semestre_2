@@ -24,11 +24,11 @@ namespace WebApi.HealthClinic.Tarde.Domains
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Campo obrigatorio")]
         [NotMapped]
-        public TimeOnly HoraDeInicio { get; set; }
+        public TimeSpan HoraDeInicio { get; set; }
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Campo obrigatorio")]
         [NotMapped]
-        public TimeOnly HoraDeEncerramento { get; set; }
+        public TimeSpan HoraDeEncerramento { get; set; }
     }
 }
