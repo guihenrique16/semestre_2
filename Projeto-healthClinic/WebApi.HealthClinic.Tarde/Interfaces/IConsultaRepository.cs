@@ -8,8 +8,10 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
 
         void Deletar(Consulta consulta);
 
-        List<Consulta> BuscarPorPaciente();
+        List<Consulta> GetAll();
 
-        List<Consulta> BuscarPorMedico();
+        List<Consulta> BuscarPorMedico();//Somente medicos
+
+        List<Consulta> BuscarPorPaciente();//Soemnte pacientes
     }
 }

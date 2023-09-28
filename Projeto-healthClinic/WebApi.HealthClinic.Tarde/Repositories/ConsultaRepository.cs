@@ -57,5 +57,10 @@ namespace WebApi.HealthClinic.Tarde.Repositories
                 throw;
             }
         }
+
+        public List<Consulta> GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

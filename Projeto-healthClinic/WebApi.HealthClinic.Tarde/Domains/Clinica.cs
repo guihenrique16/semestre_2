@@ -23,12 +23,14 @@ namespace WebApi.HealthClinic.Tarde.Domains
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [NotMapped]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
         public TimeSpan HoraDeInicio { get; set; }
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [NotMapped]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
         public TimeSpan HoraDeEncerramento { get; set; }
     }
 }

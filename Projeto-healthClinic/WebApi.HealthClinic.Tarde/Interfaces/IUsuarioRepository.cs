@@ -6,8 +6,12 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
     {
         void cadastrar(Usuario usuario);
 
-        void Deletar(Usuario usuario);
+        void Deletar(Guid id);
 
-        List<Usuario> GetAll();
+        void Atualizar(Guid id, Usuario usuario);
+
+        Usuario BuscarPorEmailSenha(string Email, string Senha);
+
+        Usuario BuscarPorId(Guid id);
     }
 }

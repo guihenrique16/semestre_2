@@ -18,7 +18,9 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                     IdClinica = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CNPJ = table.Column<string>(type: "VARCHAR(14)", nullable: false),
                     Endereco = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    NomeFantasia = table.Column<string>(type: "VARCHAR(100)", nullable: false)
+                    NomeFantasia = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    HoraDeInicio = table.Column<TimeSpan>(type: "TIME", nullable: false),
+                    HoraDeEncerramento = table.Column<TimeSpan>(type: "TIME", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,6 +57,7 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                 {
                     IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "VARCHAR(50)", nullable: false),
+                    DataNascimento = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     Telefone = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     Email = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     Senha = table.Column<string>(type: "CHAR(60)", maxLength: 60, nullable: false),

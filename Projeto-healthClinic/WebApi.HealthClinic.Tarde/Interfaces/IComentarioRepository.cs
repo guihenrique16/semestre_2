@@ -10,6 +10,6 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
 
         List<Comentario> GetAll();
 
-        List<Comentario> BuscarPorConsulta();   
+        Comentario BuscarPorConsulta();   
     }
 }

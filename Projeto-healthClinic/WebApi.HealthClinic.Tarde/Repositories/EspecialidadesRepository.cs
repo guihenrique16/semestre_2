@@ -29,12 +29,27 @@ namespace WebApi.HealthClinic.Tarde.Repositories
 
         public void Deletar(Especialidades especialidades)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Especialidades EspecialidadeBuscada = ctx.Especialidades.Find(especialidades)!;
+
+                if (EspecialidadeBuscada != null)
+                {
+                    ctx.Especialidades.Remove(especialidades);
+                }
+
+                ctx.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public List<Especialidades> GetAll()
         {
-            throw new NotImplementedException();
+            return ctx.Especialidades.ToList();
         }
     }
 }

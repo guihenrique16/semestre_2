@@ -12,11 +12,6 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             ctx = new HealthContext();
         }
 
-        public List<Comentario> BuscarPorConsulta()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Cadastrar(Comentario comentario)
         {
             try
@@ -55,6 +50,11 @@ namespace WebApi.HealthClinic.Tarde.Repositories
         public List<Comentario> GetAll()
         {
             return ctx.Comentario.ToList();
+        }
+
+        Comentario IComentarioRepository.BuscarPorConsulta()
+        {
+            throw new NotImplementedException();
         }
     }
 }

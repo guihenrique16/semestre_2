@@ -36,6 +36,12 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
+                    b.Property<TimeSpan>("HoraDeEncerramento")
+                        .HasColumnType("TIME");
+
+                    b.Property<TimeSpan>("HoraDeInicio")
+                        .HasColumnType("TIME");
+
                     b.Property<string>("NomeFantasia")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
@@ -179,6 +185,10 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                     b.Property<Guid>("IdUsuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DataNascimento")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("Email")
                         .IsRequired()

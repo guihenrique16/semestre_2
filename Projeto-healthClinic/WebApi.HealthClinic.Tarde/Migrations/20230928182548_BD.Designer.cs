@@ -12,7 +12,7 @@ using WebApi.HealthClinic.Tarde.Contexts;
 namespace WebApi.HealthClinic.Tarde.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    [Migration("20230926201828_BD")]
+    [Migration("20230928182548_BD")]
     partial class BD
     {
         /// <inheritdoc />
@@ -38,6 +38,12 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                     b.Property<string>("Endereco")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
+
+                    b.Property<TimeSpan>("HoraDeEncerramento")
+                        .HasColumnType("TIME");
+
+                    b.Property<TimeSpan>("HoraDeInicio")
+                        .HasColumnType("TIME");
 
                     b.Property<string>("NomeFantasia")
                         .IsRequired()
@@ -182,6 +188,10 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                     b.Property<Guid>("IdUsuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DataNascimento")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("Email")
                         .IsRequired()

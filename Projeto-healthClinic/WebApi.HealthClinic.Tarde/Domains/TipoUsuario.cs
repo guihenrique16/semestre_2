@@ -7,7 +7,7 @@ namespace WebApi.HealthClinic.Tarde.Domains
     public class TipoUsuario
     {
         [Key]
-        public Guid IdTipoDeUsuario { get; set; } = Guid.NewGuid();
+        public Guid IdTipoUsuario { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "Campo obrigatorio")]
