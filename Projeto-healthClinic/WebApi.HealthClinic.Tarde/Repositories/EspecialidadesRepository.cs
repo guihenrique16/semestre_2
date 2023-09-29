@@ -6,7 +6,7 @@ namespace WebApi.HealthClinic.Tarde.Repositories
 {
     public class EspecialidadesRepository : IEspecialidadesRepository
     {
-        private readonly HealthContext ctx;
+        private readonly HealthContext ctx; 
         public EspecialidadesRepository()
         {
             ctx = new HealthContext();

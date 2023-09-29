@@ -1,4 +1,5 @@
-﻿using WebApi.HealthClinic.Tarde.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApi.HealthClinic.Tarde.Contexts;
 using WebApi.HealthClinic.Tarde.Domains;
 using WebApi.HealthClinic.Tarde.Interfaces;
 
@@ -13,14 +14,46 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             ctx = new HealthContext();  
         }
 
-        public List<Consulta> BuscarPorMedico()
+        public List<Consulta> BuscarPorMedico(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Consulta> consultaPorM = new List<Consulta>();
+                foreach (Consulta c in ctx.Consulta)
+                {
+                    if (c.IdMedico == id)
+                    {
+                        consultaPorM.Add(c);
+                    }
+                }
+                return consultaPorM;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public List<Consulta> BuscarPorPaciente()
+        public List<Consulta> BuscarPorPaciente(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Consulta> consultaPorP = new List<Consulta>();
+                foreach (Consulta c in ctx.Consulta)
+                {
+                    if (c.IdPaciente == id)
+                    {
+                        consultaPorP.Add(c);
+                    }
+                }
+                return consultaPorP;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void cadastrar(Consulta consulta)
@@ -60,7 +93,7 @@ namespace WebApi.HealthClinic.Tarde.Repositories
 
         public List<Consulta> GetAll()
         {
-            throw new NotImplementedException();
+            return ctx.Consulta.ToList();
         }
     }
 }

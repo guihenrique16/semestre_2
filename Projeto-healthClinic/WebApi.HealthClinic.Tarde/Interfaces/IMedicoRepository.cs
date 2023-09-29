@@ -8,8 +8,8 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
 
         void Deletar(Medico medico);
 
-        void Atualizar(Medico m, Guid id);
+        void Atualizar(Medico medico, Guid id);
 
-        Medico BuscarPorEspecialidades();
+        List<Medico> BuscarPorEspecialidades(string titulo);
     }
 }

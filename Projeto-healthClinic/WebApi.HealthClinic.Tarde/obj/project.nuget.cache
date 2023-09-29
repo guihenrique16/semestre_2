@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1qUC3Cc3VsAR5jOgsXt6GsJjJO/9vm5DN60xA/dU50ljzfG1ubQoMf2wAk/GC7UDNKxCxiwJm8/HYj5s5poxQA==",
+  "dgSpecHash": "/tw9G3rpMN50By1MoL1V4YzJj94q0boAF0wBTyeEBynufJmylrflYV17pmiRa4ORhG7QDBHir+z/OhUKg/nO+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\46561309820\\Desktop\\semestre_2\\Projeto-healthClinic\\WebApi.HealthClinic.Tarde\\WebApi.HealthClinic.Tarde.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,7 @@
     "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.11\\microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.11\\microsoft.aspnetcore.jsonpatch.7.0.11.nupkg.sha512",
     "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.11\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.11.nupkg.sha512",
-    "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.0\\microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
+    "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.11\\microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
     "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\46561309820\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

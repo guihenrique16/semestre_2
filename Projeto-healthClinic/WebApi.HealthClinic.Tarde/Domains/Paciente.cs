@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApi.HealthClinic.Tarde.Domains
 {
     [Table(nameof(Paciente))]
+    [Index(nameof(CPF), IsUnique = true)]
     public class Paciente
     {
         [Key]
@@ -16,6 +18,10 @@ namespace WebApi.HealthClinic.Tarde.Domains
         [Column(TypeName = "VARCHAR(8)")]
         [Required(ErrorMessage = "Campo obrigatorio")]
         public string? CEP { get; set; }
+
+        [Column(TypeName = "VARCHAR(9)")]
+        [Required(ErrorMessage = "Campo obrigatorio")]
+        public string? RG { get; set; }
 
         //ref. tabela Usuario
         [Required(ErrorMessage = "Campo obrigatorio")]

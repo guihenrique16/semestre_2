@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApi.HealthClinic.Tarde.Domains
 {
     [Table(nameof(TipoUsuario))]
+    [Index(nameof(Titulo), IsUnique = true)]
     public class TipoUsuario
     {
         [Key]

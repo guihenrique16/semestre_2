@@ -10,8 +10,8 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
 
         List<Consulta> GetAll();
 
-        List<Consulta> BuscarPorMedico();//Somente medicos
+        List<Consulta> BuscarPorMedico(Guid id);//Somente medicos
 
-        List<Consulta> BuscarPorPaciente();//Soemnte pacientes
+        List<Consulta> BuscarPorPaciente(Guid id);//Soemnte pacientes
     }
 }

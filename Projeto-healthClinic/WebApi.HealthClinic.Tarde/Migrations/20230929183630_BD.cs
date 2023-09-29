@@ -43,12 +43,12 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                 name: "TipoUsuario",
                 columns: table => new
                 {
-                    IdTipoDeUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdTipoUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Titulo = table.Column<string>(type: "VARCHAR(50)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoUsuario", x => x.IdTipoDeUsuario);
+                    table.PrimaryKey("PK_TipoUsuario", x => x.IdTipoUsuario);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,7 +70,7 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                         name: "FK_Usuario_TipoUsuario_IdTipoUsuario",
                         column: x => x.IdTipoUsuario,
                         principalTable: "TipoUsuario",
-                        principalColumn: "IdTipoDeUsuario",
+                        principalColumn: "IdTipoUsuario",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -107,6 +107,7 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                     IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CPF = table.Column<string>(type: "VARCHAR(11)", nullable: false),
                     CEP = table.Column<string>(type: "VARCHAR(8)", nullable: false),
+                    RG = table.Column<string>(type: "VARCHAR(9)", nullable: false),
                     IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -173,6 +174,12 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Clinica_CNPJ",
+                table: "Clinica",
+                column: "CNPJ",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Comentario_IdConsulta",
                 table: "Comentario",
                 column: "IdConsulta");
@@ -193,6 +200,18 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                 column: "IdPaciente");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Especialidades_Titulo",
+                table: "Especialidades",
+                column: "Titulo",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medico_CRM",
+                table: "Medico",
+                column: "CRM",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Medico_IdEspecialidades",
                 table: "Medico",
                 column: "IdEspecialidades");
@@ -203,14 +222,38 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                 column: "IdUsuario");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Paciente_CPF",
+                table: "Paciente",
+                column: "CPF",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Paciente_IdUsuario",
                 table: "Paciente",
                 column: "IdUsuario");
 
             migrationBuilder.CreateIndex(
+                name: "IX_TipoUsuario_Titulo",
+                table: "TipoUsuario",
+                column: "Titulo",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuario_Email",
+                table: "Usuario",
+                column: "Email",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Usuario_IdTipoUsuario",
                 table: "Usuario",
                 column: "IdTipoUsuario");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuario_Telefone",
+                table: "Usuario",
+                column: "Telefone",
+                unique: true);
         }
 
         /// <inheritdoc />

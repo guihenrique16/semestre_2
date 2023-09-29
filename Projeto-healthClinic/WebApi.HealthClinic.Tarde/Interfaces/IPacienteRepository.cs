@@ -8,9 +8,9 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
 
         void Deletar(Paciente paciente);
 
-        void Atualizar(Paciente p, Guid id);
+        void Atualizar(Paciente paciente, Guid id);
 
-        Paciente BuscarPorCpf();
+        Paciente BuscarPorCpf(string cpf);
 
     }
 }

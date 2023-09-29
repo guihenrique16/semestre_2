@@ -1,4 +1,5 @@
-﻿using WebApi.HealthClinic.Tarde.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApi.HealthClinic.Tarde.Contexts;
 using WebApi.HealthClinic.Tarde.Domains;
 using WebApi.HealthClinic.Tarde.Interfaces;
 
@@ -10,7 +11,7 @@ namespace WebApi.HealthClinic.Tarde.Repositories
         public ComentarioRepository()
         {
             ctx = new HealthContext();
-        }
+        } 
 
         public void Cadastrar(Comentario comentario)
         {
@@ -52,9 +53,9 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             return ctx.Comentario.ToList();
         }
 
-        Comentario IComentarioRepository.BuscarPorConsulta()
+        public Comentario BuscarPorConsulta(Guid id)
         {
-            throw new NotImplementedException();
+            return ctx.Comentario.FirstOrDefault(c => c.Consulta!.IdConsulta == id)!;
         }
     }
 }

@@ -48,6 +48,9 @@ namespace WebApi.HealthClinic.Tarde.Migrations
 
                     b.HasKey("IdClinica");
 
+                    b.HasIndex("CNPJ")
+                        .IsUnique();
+
                     b.ToTable("Clinica");
                 });
 
@@ -113,6 +116,9 @@ namespace WebApi.HealthClinic.Tarde.Migrations
 
                     b.HasKey("IdEspecialidades");
 
+                    b.HasIndex("Titulo")
+                        .IsUnique();
+
                     b.ToTable("Especialidades");
                 });
 
@@ -133,6 +139,9 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("IdMedico");
+
+                    b.HasIndex("CRM")
+                        .IsUnique();
 
                     b.HasIndex("IdEspecialidades");
 
@@ -158,7 +167,14 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                     b.Property<Guid>("IdUsuario")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("RG")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(9)");
+
                     b.HasKey("IdPaciente");
+
+                    b.HasIndex("CPF")
+                        .IsUnique();
 
                     b.HasIndex("IdUsuario");
 
@@ -167,7 +183,7 @@ namespace WebApi.HealthClinic.Tarde.Migrations
 
             modelBuilder.Entity("WebApi.HealthClinic.Tarde.Domains.TipoUsuario", b =>
                 {
-                    b.Property<Guid>("IdTipoDeUsuario")
+                    b.Property<Guid>("IdTipoUsuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -175,7 +191,10 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
 
-                    b.HasKey("IdTipoDeUsuario");
+                    b.HasKey("IdTipoUsuario");
+
+                    b.HasIndex("Titulo")
+                        .IsUnique();
 
                     b.ToTable("TipoUsuario");
                 });
@@ -212,7 +231,13 @@ namespace WebApi.HealthClinic.Tarde.Migrations
 
                     b.HasKey("IdUsuario");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.HasIndex("IdTipoUsuario");
+
+                    b.HasIndex("Telefone")
+                        .IsUnique();
 
                     b.ToTable("Usuario");
                 });
