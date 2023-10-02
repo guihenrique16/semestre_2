@@ -6,7 +6,7 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
     {
         void cadastrar(Medico medico);
 
-        void Deletar(Medico medico);
+        void Deletar(Guid id);
 
         void Atualizar(Medico medico, Guid id);
 

@@ -27,15 +27,15 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             }
         }
 
-        public void Deletar(Especialidades especialidades)
+        public void Deletar(Guid id)
         {
             try
             {
-                Especialidades EspecialidadeBuscada = ctx.Especialidades.Find(especialidades)!;
+                Especialidades EspecialidadeBuscada = ctx.Especialidades.Find(id)!;
 
                 if (EspecialidadeBuscada != null)
                 {
-                    ctx.Especialidades.Remove(especialidades);
+                    ctx.Especialidades.Remove(EspecialidadeBuscada);
                 }
 
                 ctx.SaveChanges();

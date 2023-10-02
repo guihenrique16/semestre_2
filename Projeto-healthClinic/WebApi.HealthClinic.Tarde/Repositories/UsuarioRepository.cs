@@ -86,10 +86,10 @@ namespace WebApi.HealthClinic.Tarde.Repositories
         {
             try
             {
-                Usuario x = ctx.Usuario.Find(id)!;
-                if (x != null)
+                Usuario usuarioBuscado = ctx.Usuario.Find(id)!;
+                if (usuarioBuscado != null)
                 {
-                    ctx.Remove(x);
+                    ctx.Remove(usuarioBuscado);
                 }
                 ctx.SaveChanges();
             }

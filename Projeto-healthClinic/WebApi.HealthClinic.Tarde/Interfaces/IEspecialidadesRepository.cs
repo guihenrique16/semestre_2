@@ -6,7 +6,7 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
     {
         void cadastrar(Especialidades especialidades);
 
-        void Deletar(Especialidades especialidades);
+        void Deletar(Guid id);
 
         List<Especialidades> GetAll();
     }

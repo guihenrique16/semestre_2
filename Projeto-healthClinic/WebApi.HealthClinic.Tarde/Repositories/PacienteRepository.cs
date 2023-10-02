@@ -51,15 +51,15 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             }
         }
 
-        public void Deletar(Paciente paciente)
+        public void Deletar(Guid id)
         {
             try
             {
-                Paciente PacienteBuscada = ctx.Paciente.Find(paciente)!;
+                Paciente PacienteBuscado = ctx.Paciente.Find(id)!;
 
-                if (PacienteBuscada != null)
+                if (PacienteBuscado != null)
                 {
-                    ctx.Paciente.Remove(paciente);
+                    ctx.Paciente.Remove(PacienteBuscado);
                 }
 
                 ctx.SaveChanges();
