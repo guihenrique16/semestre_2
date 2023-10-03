@@ -19,8 +19,8 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                     CNPJ = table.Column<string>(type: "VARCHAR(14)", nullable: false),
                     Endereco = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     NomeFantasia = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    HoraDeInicio = table.Column<TimeSpan>(type: "TIME", nullable: false),
-                    HoraDeEncerramento = table.Column<TimeSpan>(type: "TIME", nullable: false)
+                    HoraDeInicio = table.Column<TimeOnly>(type: "time", nullable: false),
+                    HoraDeEncerramento = table.Column<TimeOnly>(type: "time", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -127,6 +127,9 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                 {
                     IdConsulta = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Prontuário = table.Column<string>(type: "TEXT", nullable: false),
+                    DataConsulta = table.Column<DateTime>(type: "DATETIME", nullable: false),
+                    HorarioConsulta = table.Column<TimeOnly>(type: "time", nullable: false),
+                    Situacao = table.Column<bool>(type: "BIT", nullable: false),
                     IdClinica = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdMedico = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
@@ -170,7 +173,7 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                         column: x => x.IdConsulta,
                         principalTable: "Consulta",
                         principalColumn: "IdConsulta",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(

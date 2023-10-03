@@ -4,14 +4,16 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
 {
     public interface IConsultaRepository
     {
+        void Atualizar(Guid id, Consulta consulta);
+
         void cadastrar(Consulta consulta);
 
-        void Deletar(Consulta consulta);
+        void Deletar(Guid id);
+
+        Consulta BuscarPorId(Guid id);
 
         List<Consulta> GetAll();
 
-        List<Consulta> BuscarPorMedico(Guid id);//Somente medicos
-
-        List<Consulta> BuscarPorPaciente(Guid id);//Soemnte pacientes
+        List<Consulta> BuscarMinhas(Guid id);
     }
 }

@@ -6,7 +6,7 @@ namespace WebApi.HealthClinic.Tarde.Interfaces
     {
         void Cadastrar(Comentario comentario);
 
-        void Deletar(Comentario comentario);    
+        void Deletar(Guid id);    
 
         List<Comentario> GetAll();
 

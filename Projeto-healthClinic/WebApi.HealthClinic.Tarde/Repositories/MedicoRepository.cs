@@ -35,8 +35,19 @@ namespace WebApi.HealthClinic.Tarde.Repositories
 
         public List<Medico> BuscarPorEspecialidades(string titulo)
         {
-            List<Medico> lista = ctx.Medico.Include(x => x.Especialidades).Where(c => c.Especialidades!.Titulo == titulo).ToList();
-            return lista;
+            try
+            {
+                List<Medico> lista = ctx.Medico.Include(x => x.Especialidades).Where(c => c.Especialidades!.Titulo == titulo).ToList();
+            
+                return lista;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public void cadastrar(Medico medico)

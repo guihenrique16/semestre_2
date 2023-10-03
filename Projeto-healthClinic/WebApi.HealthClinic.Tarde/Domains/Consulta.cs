@@ -13,6 +13,19 @@ namespace WebApi.HealthClinic.Tarde.Domains
         [Required(ErrorMessage = "Campo obrigatorio")]
         public string? Prontuário { get; set; }
 
+        [Column(TypeName = "DATETIME")]
+        [Required(ErrorMessage = "Campo obrigatorio")]
+        public DateTime? DataConsulta { get; set; }
+
+
+        [Column(TypeName = "TIME")]
+        [Required(ErrorMessage = "Campo obrigatorio")]
+        public TimeOnly? HorarioConsulta { get; set; }
+
+        [Column(TypeName = "BIT")]
+        [Required(ErrorMessage = "campo obrigatorio")]
+        public bool? Situacao { get; set; }
+
         //ref. tabela Clinica
         [Required(ErrorMessage = "Campo obrigatorio")]
         public Guid IdClinica { get; set; }

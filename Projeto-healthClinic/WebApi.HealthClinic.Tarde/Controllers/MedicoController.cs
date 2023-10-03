@@ -17,6 +17,20 @@ namespace WebApi.HealthClinic.Tarde.Controllers
             _medicoRepository = new MedicoRepository();
         }
 
+        [HttpGet]
+        public IActionResult GetByEspecialidades(string titulo)
+        {
+            try
+            {
+                return Ok(_medicoRepository.BuscarPorEspecialidades(titulo));
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
         [HttpPost]
         public IActionResult Post(Medico medico)
         {

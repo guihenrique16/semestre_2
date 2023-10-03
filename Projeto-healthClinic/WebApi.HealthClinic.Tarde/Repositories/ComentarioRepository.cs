@@ -28,15 +28,15 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             }
         }
 
-        public void Deletar(Comentario comentario)
+        public void Deletar(Guid id)
         {
             try
             {
-                Comentario ComentarioBuscado = ctx.Comentario.Find(comentario)!;
+                Comentario ComentarioBuscado = ctx.Comentario.Find(id)!;
 
                 if (ComentarioBuscado != null)
                 {
-                    ctx.Comentario.Remove(comentario);
+                    ctx.Comentario.Remove(ComentarioBuscado);
                 }
 
                 ctx.SaveChanges();

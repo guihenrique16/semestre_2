@@ -4,6 +4,33 @@
         <name>WebApi.HealthClinic.Tarde</name>
     </assembly>
     <members>
+        <member name="M:WebApi.HealthClinic.Tarde.Controllers.ConsultaController.GetAll">
+            <summary>
+            listar todas as consultas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.HealthClinic.Tarde.Controllers.ConsultaController.GetById(System.Guid)">
+            <summary>
+            Listar Minhas Consultas
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.HealthClinic.Tarde.Controllers.ConsultaController.Post(WebApi.HealthClinic.Tarde.Domains.Consulta)">
+            <summary>
+            Cadastrar consultas
+            </summary>
+            <param name="consulta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.HealthClinic.Tarde.Controllers.ConsultaController.Delete(System.Guid)">
+            <summary>
+            Deletar consultas
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:WebApi.HealthClinic.Tarde.Migrations.BD">
             <inheritdoc />
         </member>

@@ -14,19 +14,33 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             ctx = new HealthContext();  
         }
 
-        public List<Consulta> BuscarPorMedico(Guid id)
+        public void Atualizar(Guid id, Consulta consulta)
         {
             try
             {
-                List<Consulta> consultaPorM = new List<Consulta>();
-                foreach (Consulta c in ctx.Consulta)
-                {
-                    if (c.IdMedico == id)
-                    {
-                        consultaPorM.Add(c);
-                    }
-                }
-                return consultaPorM;
+                Consulta consultaBuscada = this.BuscarPorId(id);
+
+                consultaBuscada.DataConsulta = consulta.DataConsulta;
+                consultaBuscada.Situacao = consulta.Situacao;
+                consultaBuscada.IdPaciente = consulta.IdPaciente;
+                consultaBuscada.IdMedico = consulta.IdMedico;
+
+                ctx.Consulta.Update(consultaBuscada);
+
+                ctx.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public List<Consulta> BuscarMinhas(Guid id)
+        {
+            try
+            { 
+                return ctx.Consulta.Include(c => c.Paciente).Include(c => c.Medico).Where(c => (c.Paciente!.IdUsuario == id) || (c.Medico!.IdUsuario == id)).ToList();
+ 
             }
             catch (Exception)
             {
@@ -35,23 +49,22 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             }
         }
 
-        public List<Consulta> BuscarPorPaciente(Guid id)
+        public Consulta BuscarPorId(Guid id)
         {
             try
             {
-                List<Consulta> consultaPorP = new List<Consulta>();
-                foreach (Consulta c in ctx.Consulta)
+                Consulta consultaBuscada = ctx.Consulta.Include(c => c.Clinica).Include(c => c.Paciente).Include(c => c.Medico)
+                    .FirstOrDefault(c => c.IdConsulta == id)!;
+
+                if (consultaBuscada == null)
                 {
-                    if (c.IdPaciente == id)
-                    {
-                        consultaPorP.Add(c);
-                    }
+                    return null;
                 }
-                return consultaPorP;
+
+                return consultaBuscada;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -71,15 +84,15 @@ namespace WebApi.HealthClinic.Tarde.Repositories
             }
         }
 
-        public void Deletar(Consulta consulta)
+        public void Deletar(Guid id)
         {
             try
             {
-                Consulta ConsultaBuscada = ctx.Consulta.Find(consulta)!;
+                Consulta ConsultaBuscada = ctx.Consulta.Find(id)!;
 
                 if (ConsultaBuscada != null)
                 {
-                    ctx.Consulta.Remove(consulta);
+                    ctx.Consulta.Remove(ConsultaBuscada);
                 }
 
                 ctx.SaveChanges();
