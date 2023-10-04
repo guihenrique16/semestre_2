@@ -16,6 +16,28 @@ namespace WebApi.HealthClinic.Tarde.Controllers
         {
             _consultaRepository = new ConsultaRepository();
         }
+
+        [HttpPut]
+        public IActionResult Put(Guid id, Consulta consulta)
+        {
+            try
+            {
+                Consulta consultaBuscada = _consultaRepository.BuscarPorId(id);
+
+                if (consultaBuscada == null)
+                {
+                    return NotFound("Não há consulta cadastrada com o id informado");
+                }
+                _consultaRepository.Atualizar(id, consulta);
+
+                return Ok("Dados da consulta atualizados com sucesso");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         /// <summary>
         /// listar todas as consultas
         /// </summary>

@@ -100,7 +100,6 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Prontuário")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("Situacao")

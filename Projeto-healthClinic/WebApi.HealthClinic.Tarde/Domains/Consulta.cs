@@ -10,8 +10,7 @@ namespace WebApi.HealthClinic.Tarde.Domains
         public Guid IdConsulta { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "TEXT")]
-        [Required(ErrorMessage = "Campo obrigatorio")]
-        public string? Prontuário { get; set; }
+        public string Prontuário { get; set; }
 
         [Column(TypeName = "DATETIME")]
         [Required(ErrorMessage = "Campo obrigatorio")]

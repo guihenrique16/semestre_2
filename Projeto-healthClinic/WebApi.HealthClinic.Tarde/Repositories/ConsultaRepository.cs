@@ -24,6 +24,7 @@ namespace WebApi.HealthClinic.Tarde.Repositories
                 consultaBuscada.Situacao = consulta.Situacao;
                 consultaBuscada.IdPaciente = consulta.IdPaciente;
                 consultaBuscada.IdMedico = consulta.IdMedico;
+                consultaBuscada.Prontuário = consulta.Prontuário;
 
                 ctx.Consulta.Update(consultaBuscada);
 

@@ -126,7 +126,7 @@ namespace WebApi.HealthClinic.Tarde.Migrations
                 columns: table => new
                 {
                     IdConsulta = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Prontuário = table.Column<string>(type: "TEXT", nullable: false),
+                    Prontuário = table.Column<string>(type: "TEXT", nullable: true),
                     DataConsulta = table.Column<DateTime>(type: "DATETIME", nullable: false),
                     HorarioConsulta = table.Column<TimeOnly>(type: "time", nullable: false),
                     Situacao = table.Column<bool>(type: "BIT", nullable: false),
