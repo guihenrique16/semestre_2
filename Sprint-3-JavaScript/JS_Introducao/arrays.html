@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let frutas = ['banana','mamao','uva'];
+        console.log(frutas);
+
+        frutas.push('criguela');
+        frutas.push('amora');
+
+        frutas.sort();
+
+        // for (let index = 0; index < frutas.length; index++) {
+        // console.log(`fruta${index + 1}: ${frutas[index]}`);     
+        // }
+
+        frutas.forEach(function (f , n) {
+           // console.log(f);
+            console.log(`Fruta: ${n +1}, ${f} `);
+        });
+
+    </script>
+    
+</body>
+</html>
