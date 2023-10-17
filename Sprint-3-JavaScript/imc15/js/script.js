@@ -1,3 +1,5 @@
+const listaPessoas = [];
+
 function calcular(e) {
     e.preventDefault();
     let nome = document.getElementById("nome").value.trim();
@@ -18,15 +20,12 @@ function calcular(e) {
     // console.log(imc);
     // console.log(situacao);
     
-    const pessoa = {
-        nome : nome,
-        altura : altura,
-        peso : peso,
-        Imc : imc,
-        situacao : situacao
-    }
-    console.log(pessoa);
+    const pessoa = {nome, altura, peso, imc : imc.toFixed(2), situacao}
+
+    listaPessoas.push(pessoa);
+    exibirPessoas();
 }
+
 
 function calcularImc(peso, altura) {
     //return peso / (altura * altura);
@@ -52,4 +51,24 @@ function gerarSituacao(imc) {
     else {
         return "Cuidado!!"
     }
+}
+
+function exibirPessoas() {
+    let linhas = '';
+    listaPessoas.forEach( function(p){
+
+        linhas +=`
+            <tr>
+                <td data-cell="nome">${p.nome}</td>
+                <td data-cell="altura">${p.altura}</td>
+                <td data-cell="peso">${p.peso}</td>
+                <td data-cell="valor do IMC">${p.imc}</td>
+                <td data-cell="classificação do IMC">${p.situacao}</td>
+                <td data-cell="data de cadastro">19/06/2023 21:27</td>
+            </tr> 
+        `;
+    });
+
+    // inserir as linhas na tabela html
+    document.getElementById('corpo-tabela').innerHTML = linhas;
 }
