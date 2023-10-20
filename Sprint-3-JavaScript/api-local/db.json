@@ -1,0 +1,68 @@
+{
+  "imc": [
+    {
+      "id": 1,
+      "nome": "Guilherme",
+      "altura": "1.80",
+      "peso": 80,
+      "imc": 24.69,
+      "situacaoImc": "normal"
+    },
+    {
+      "nome": "Felipe",
+      "altura": "1.50",
+      "peso": 30,
+      "imc": 15,
+      "situacaoImc": "papel",
+      "id": 2
+    },
+    {
+      "nome": "MuMu",
+      "altura": "1.75",
+      "peso": 78,
+      "imc": 25,
+      "situacaoImc": "normal",
+      "id": 3
+    },
+    {
+      "nome": "miniCraque",
+      "altura": "1.70",
+      "peso": 45,
+      "imc": 18,
+      "situacaoImc": "pre-normal",
+      "id": 4
+    },
+    {
+      "nome": "miga",
+      "altura": "1.90",
+      "peso": 95,
+      "imc": 24.97,
+      "situacaoImc": "normal",
+      "id": 5
+    },
+    {
+      "nome": "Richard",
+      "altura": "1.78",
+      "peso": 78,
+      "imc": 24.69,
+      "situacaoImc": "normal",
+      "id": 7
+    },
+    {
+      "nome": "gordo",
+      "altura": "1.78",
+      "peso": 95,
+      "imc": 35,
+      "situacaoImc": "obeso",
+      "id": 8
+    },
+    {
+      "nome": "pe na cova",
+      "altura": "1.78",
+      "peso": 105,
+      "imc": 45,
+      "situacaoImc": "cadaver",
+      "id": 9
+    }
+  ]
+}
