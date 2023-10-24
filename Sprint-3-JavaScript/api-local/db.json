@@ -47,22 +47,6 @@
       "imc": 24.69,
       "situacaoImc": "normal",
       "id": 7
-    },
-    {
-      "nome": "gordo",
-      "altura": "1.78",
-      "peso": 95,
-      "imc": 35,
-      "situacaoImc": "obeso",
-      "id": 8
-    },
-    {
-      "nome": "pe na cova",
-      "altura": "1.78",
-      "peso": 105,
-      "imc": 45,
-      "situacaoImc": "cadaver",
-      "id": 9
     }
   ]
 }
