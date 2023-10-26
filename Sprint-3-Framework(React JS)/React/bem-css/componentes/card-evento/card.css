@@ -5,7 +5,8 @@
     align-items: center;
     width: 250px;
     height: 250px;
-    border: 2px solid black;
+    border: 2px solid brown;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -30,6 +31,5 @@
 }
 
 .card__conectar--cinza{
-    
     color: gray;
 }
