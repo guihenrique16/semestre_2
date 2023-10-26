@@ -1,0 +1,35 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.card__titulo{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.card__text{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.card__conectar{
+    background-color: transparent;
+    border: none;
+    color: brown;
+}
+
+.card__conectar:hover{
+    cursor: pointer;
+}
+
+.card__conectar--cinza{
+    
+    color: gray;
+}
