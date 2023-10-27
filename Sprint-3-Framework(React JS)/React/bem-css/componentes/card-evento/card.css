@@ -33,3 +33,7 @@
 .card__conectar--cinza{
     color: gray;
 }
+
+.card__conectar--cinza:hover{
+    cursor: not-allowed;
+}
