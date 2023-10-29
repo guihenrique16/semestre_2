@@ -1,0 +1,20 @@
+{
+    "cep":[
+        {
+            "nome": "Guilherme",
+            "sobrenome": "Alberto",
+            "email": "guilherme97035@gmail.com",
+            "pais": "+55",
+            "ddd": 11,
+            "telefone": 970351986,
+            "cep": "03342000",
+            "rua": "Avenida Regente Feijó",
+            "numero": 1900,
+            "complemento": "Apto43 bloco3",
+            "bairro": "Vila Regente Feijó",
+            "cidade": "Sao Paulo",
+            "UF": "SP",
+            "anotacoes": ""
+        }
+    ]
+}
