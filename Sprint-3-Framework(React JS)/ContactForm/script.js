@@ -1,3 +1,5 @@
+const urlLocal = "http://localhost:3000/contatos"
+
 async function chamarApi() {
      const cep = document.getElementById("cep").value;
      const url = `https://viacep.com.br/ws/${cep}/json/`;
@@ -7,8 +9,9 @@ async function chamarApi() {
 
           console.log(endereco);
           exibirEndereco(endereco);
+
      } catch (error) {
-          alert("erro na api");
+          alert("CEP invalido");
 
           limparEndereco()
           document.getElementById("not-found").innerText = "Cep Inválido"
@@ -16,26 +19,26 @@ async function chamarApi() {
 
 }
 
-const urlLocal = ""
-async function cadastrar(e) {
+
+async function Cadastrar(e) {
      e.preventDefault();
 
-     let nome = document.getElementById("nome").value
-     let sobrenome = document.getElementById("sobrenome").value
-     let email= document.getElementById("email").value
-     let pais= document.getElementById("pais").value
-     let ddd= document.getElementById("ddd").value
-     let telefone = document.getElementById("telefone").value
-     let cep = document.getElementById("cep").value
-     let rua = document.getElementById("rua").value
-     let numero = document.getElementById("numero").value
-     let complemento = document.getElementById("complemento").value
-     let bairro = document.getElementById("bairro").value
-     let cidade = document.getElementById("cidade").value
-     let UF = document.getElementById("UF").value
-     let anotacoes = document.getElementById("anotacoes").value
-     
-     const objDados = {nome, sobrenome, email, pais, ddd, telefone, cep, rua, numero, complemento, bairro, cidade, UF, anotacoes}
+     const nome = document.getElementById("nome").value
+     const sobrenome = document.getElementById("sobrenome").value
+     const email = document.getElementById("email").value
+     const pais = document.getElementById("pais").value
+     const ddd = document.getElementById("ddd").value
+     const telefone = document.getElementById("telefone").value
+     const cep = document.getElementById("cep").value
+     const rua = document.getElementById("rua").value
+     const numero = document.getElementById("numero").value
+     const complemento = document.getElementById("complemento").value
+     const bairro = document.getElementById("bairro").value
+     const cidade = document.getElementById("cidade").value
+     const UF = document.getElementById("UF").value
+     const anotacoes = document.getElementById("anotacoes").value
+
+     const objDados = { nome, sobrenome, email, pais, ddd, telefone, cep, rua, numero, complemento, bairro, cidade, UF, anotacoes }
 
      try {
           const promise = await fetch(urlLocal, {
@@ -43,9 +46,9 @@ async function cadastrar(e) {
                headers: { "Content-Type": "application/json" },
                method: "post"
           });
-
-          const retorno = promise.json();
+          const retorno = await promise.json();
           console.log(retorno);
+          limparEndereco();
 
      } catch (error) {
           alert("Deu ruim" + error)
@@ -58,9 +61,9 @@ function exibirEndereco(endereco) {
      document.getElementById("cidade").value = endereco.localidade
      document.getElementById("UF").value = endereco.uf
      document.getElementById("ddd").value = endereco.ddd
- }
+}
 
- function limparEndereco() {
+function limparEndereco() {
      document.getElementById("cep").value = "";
      document.getElementById("rua").value = "";
      document.getElementById("numero").value = "";
